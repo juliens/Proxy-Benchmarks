@@ -23,6 +23,16 @@ resource "aws_instance" "haproxy" {
   }
 
   provisioner "file" {
+    source      = "./haproxy/cert.pem"
+    destination = "/tmp/cert.pem"
+  }
+
+  provisioner "file" {
+    source      = "./haproxy/key.pem"
+    destination = "/tmp/key.pem"
+  }
+
+  provisioner "file" {
     source      = "./haproxy/haproxy_setup.sh"
     destination = "/tmp/setup.sh"
   }

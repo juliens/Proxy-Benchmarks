@@ -13,7 +13,7 @@ if [ ! $(which docker) ]; then
 fi
 
 # Run the Docker container
-docker run -d -p 80:80 -v /tmp/haproxy.cfg:/etc/haproxy/haproxy.cfg haproxytech/haproxy-ubuntu:2.1.4
+docker run -d -p 80:80 -v /tmp:/etc/haproxy haproxytech/haproxy-ubuntu:2.1.4
 
 # Install Hey
 wget -O hey https://storage.googleapis.com/hey-release/hey_linux_amd64
